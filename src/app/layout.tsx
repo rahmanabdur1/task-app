@@ -2,15 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css"; // Make sure this file is prepared to handle styles
 
-// Import Roboto if you're using a font package
-import { Roboto } from 'next/font/google'; // Adjust based on your import path
 
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
