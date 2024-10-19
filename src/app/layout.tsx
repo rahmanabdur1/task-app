@@ -1,16 +1,15 @@
+// In app/layout.tsx or app/layout.js
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import "./globals.css"; // Make sure this file is prepared to handle styles
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Import Roboto if you're using a font package
+import { Roboto } from 'next/font/google'; // Adjust based on your import path
+
+const roboto = Roboto({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -25,9 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* Google Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&family=Montserrat:wght@400;500&family=Poppins:wght@400&family=Exo+2:wght@500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={` antialiased`}>
         {children}
       </body>
     </html>
